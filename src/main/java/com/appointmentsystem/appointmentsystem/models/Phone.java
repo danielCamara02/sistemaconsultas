@@ -1,4 +1,4 @@
-package com.sistemaconsultas.sistemaconsultas.models;
+package com.appointmentsystem.appointmentsystem.models;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,7 @@ public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "phone_id")
-    private Long id;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "doctor_id")
@@ -18,17 +18,27 @@ public class Phone {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @Column(name = "phone_number", nullable = false)
+    // @Column(name = "phone_number", nullable = false)
+    // private String phoneNumber;
     private String phoneNumber;
 
+    // Default constructor
     public Phone() {
     }
 
-    public Long getId() {
+    // Constructor with all attributes
+    public Phone(long id, Doctor doctor, Patient patient, String phoneNumber) {
+        this.id = id;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

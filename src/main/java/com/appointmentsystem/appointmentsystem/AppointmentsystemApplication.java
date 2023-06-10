@@ -1,13 +1,13 @@
-package com.sistemaconsultas.sistemaconsultas;
+package com.appointmentsystem.appointmentsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SistemaconsultasApplication {
+public class AppointmentsystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SistemaconsultasApplication.class, args);
+		SpringApplication.run(AppointmentsystemApplication.class, args);
 	}
 
 }
