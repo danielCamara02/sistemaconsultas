@@ -1,4 +1,4 @@
-# Appointments System
+# Consultations System
 🇧🇷 Este repositório contempla um projeto de faculdade, com finalidade de fazer uma API em Spring Boot (Java) para consultas médicas
 
 🇺🇸 This repository includes a college project, with the purpose of making an API in Spring Boot (Java) for medical consultations
