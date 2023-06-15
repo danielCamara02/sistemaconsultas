@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.appointmentsystem.appointmentsystem.models.Appointment;
 import com.appointmentsystem.appointmentsystem.models.Patient;
 import com.appointmentsystem.appointmentsystem.repositories.PatientRepository;
 
@@ -35,6 +36,10 @@ public class PatientService {
     }
 
     public Patient login(String email, String password) {
+        return null;
+    }
+
+    public List<Appointment> getAppointmentsByPatient(Patient patient) {
         return null;
     }
 }

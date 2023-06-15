@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.appointmentsystem.appointmentsystem.dto.LoginRequest;
+import com.appointmentsystem.appointmentsystem.models.Appointment;
 import com.appointmentsystem.appointmentsystem.models.Patient;
 import com.appointmentsystem.appointmentsystem.services.PatientService;
 
@@ -68,6 +69,17 @@ public class PatientController {
         } else {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
+    }
+
+   @GetMapping("/{patientId}/appointments")
+    public ResponseEntity<List<Appointment>> viewAppointments(@PathVariable Long patientId) {
+        Patient patient = patientService.getPatientById(patientId);
+        if (patient == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        List<Appointment> appointments = patientService.getAppointmentsByPatient(patient);
+        return new ResponseEntity<>(appointments, HttpStatus.OK);
     }
 }
 
