@@ -35,27 +35,11 @@ public class PatientController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
-        Patient createdPatient = patientService.createPatient(patient);
-        return new ResponseEntity<>(createdPatient, HttpStatus.CREATED);
-    }
-
     @PutMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @RequestBody Patient patient) {
         Patient updatedPatient = patientService.updatePatient(id, patient);
         if (updatedPatient != null) {
             return new ResponseEntity<>(updatedPatient, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePatient(@PathVariable Long id) {
-        boolean deleted = patientService.deletePatient(id);
-        if (deleted) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
