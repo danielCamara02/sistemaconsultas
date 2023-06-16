@@ -2,8 +2,11 @@ package com.appointmentsystem.appointmentsystem.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.appointmentsystem.appointmentsystem.models.Administrator;
 
+@Service
 public class AdministratorService {
 
     public List<Administrator> getAllAdministrators() {

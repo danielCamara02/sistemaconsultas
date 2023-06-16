@@ -1,0 +1,70 @@
+                   +---------------------+
+                   |     Administrator   |
+                   +---------------------+
+                   | id                  |
+                   | name                |
+                   | address             |
+                   | password            |
+                   | email               |
+                   +---------------------+
+                   | createDoctor()      |
+                   | updateDoctor()      |
+                   | deleteDoctor()      |
+                   | createPatient()     |
+                   | updatePatient()     |
+                   | deletePatient()     |
+                   | createAdministrator() |
+                   | updateAdministrator() |
+                   | deleteAdministrator() |
+                   +---------------------+
+                                |
+                                |
+                     +----------------------+
+                     |        Doctor        |
+                     +----------------------+
+                     | id                   |
+                     | name                 |
+                     | address              |
+                     | password             |
+                     | email                |
+                     | crm                  |
+                     +----------------------+
+                     | createAppointment()  |
+                     | updateAppointment()  |
+                     | deleteAppointment()  |
+                     | viewAppointments()   |
+                     +----------------------+
+                                |
+                                |
+                     +----------------------+
+                     |        Patient       |
+                     +----------------------+
+                     | id                   |
+                     | name                 |
+                     | address              |
+                     | password             |
+                     | email                |
+                     | cpf                  |
+                     +----------------------+
+                     | viewAppointments()   |
+                     +----------------------+
+                                |
+                                |
+                     +----------------------+
+                     |      Appointment     |
+                     +----------------------+
+                     | id                   |
+                     | doctor_id            |
+                     | patient_id           |
+                     | appointment_date     |
+                     +----------------------+
+                                |
+                                |
+                     +----------------------+
+                     |        Phone         |
+                     +----------------------+
+                     | id                   |
+                     | doctor_id            |
+                     | patient_id           |
+                     | phone_number         |
+                     +----------------------+

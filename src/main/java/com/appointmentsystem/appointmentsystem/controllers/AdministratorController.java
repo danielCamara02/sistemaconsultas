@@ -40,7 +40,7 @@ public class AdministratorController {
         return new ResponseEntity<>(administrator, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/administrator")
     public ResponseEntity<Administrator> createAdministrator(@RequestBody Administrator administrator) {
         Administrator createdAdministrator = administratorService.createAdministrator(administrator);
         return new ResponseEntity<>(createdAdministrator, HttpStatus.CREATED);
@@ -55,7 +55,7 @@ public class AdministratorController {
         return new ResponseEntity<>(updatedAdministrator, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/administrator/{id}")
     public ResponseEntity<Void> deleteAdministrator(@PathVariable Long id) {
         boolean deleted = administratorService.deleteAdministrator(id);
         if (!deleted) {
@@ -64,13 +64,13 @@ public class AdministratorController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping
+    @PostMapping("/doctor")
     public ResponseEntity<Doctor> createDoctor(@RequestBody Doctor doctor) {
         Doctor createdDoctor = doctorService.createDoctor(doctor);
         return new ResponseEntity<>(createdDoctor, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/doctor/{id}")
     public ResponseEntity<Void> deleteDoctor(@PathVariable Long id) {
         boolean deleted = doctorService.deleteDoctor(id);
         if (deleted) {
@@ -80,13 +80,13 @@ public class AdministratorController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/patient")
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
         Patient createdPatient = patientService.createPatient(patient);
         return new ResponseEntity<>(createdPatient, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/patient/{id}")
     public ResponseEntity<Void> deletePatient(@PathVariable Long id) {
         boolean deleted = patientService.deletePatient(id);
         if (deleted) {
